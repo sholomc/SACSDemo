@@ -1,0 +1,8 @@
+constants SACSConstants[
+ 
+	val MaxWeight = 1.2 kg
+	val PowerBudget = 2.5 W
+	val BandWidthCapacity =  0.100 mbytesps
+	val MIPSBudget = 2.0 mips 
+	
+]

@@ -1,0 +1,12 @@
+property set SCSProperties is
+	Weight_Type: TYPE AADLREAL UNITS SCSProperties::Weight_Units;
+  	Weight_Units: TYPE UNITS (kg);
+  	Power_Type: TYPE AADLREAL UNITS SCSProperties::Power_Units;
+  	Power_Units: TYPE UNITS (Watts);
+  	Bandwidth_Type: TYPE AADLREAL UNITS SCSProperties::Bandwidth_Units;
+  	Bandwidth_Units: TYPE UNITS (mbytesps);
+  	Throughput_Type: TYPE AADLREAL UNITS SCSProperties::Throughput_Units;
+  	Throughput_Units: TYPE UNITS (mips);
+  	SCSCmds: enumeration (on,off,engage) applies to (data, port, system);
+	
+end SCSProperties;

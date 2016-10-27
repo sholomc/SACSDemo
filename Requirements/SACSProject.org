@@ -1,0 +1,19 @@
+organization SCSProject
+stakeholder Integrator [
+	full name "Company 1"
+	title "Project Manager"
+	role "System Integrator"
+]
+stakeholder Acquirer [
+	full name "PMO Platform"
+	title "Software Acqusitions Manager"
+	email "sgc@sei.cmu.edu"
+	role "System acquirer"
+	
+]
+stakeholder Modeler [
+	full name "AADL Modeler"
+	title "Software Developer"
+	email "sgc@sei.cmu.edu"
+	role "System modeler"
+	]

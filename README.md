@@ -1,4 +1,4 @@
-# SACSDemo]
+# SACSDemo
 
 This repository will contain models and documentation to illustrate 
 

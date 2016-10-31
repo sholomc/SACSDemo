@@ -1,0 +1,19 @@
+package IntegratedSACS
+public
+  	system SACS -- sensor control system template
+  	
+  	end SACS;
+
+	system implementation SACS.singletier0
+		subcomponents
+	
+			ControlSystem: system;
+			sensor1: device;
+			sensor2: device;
+			actuator:device;
+		
+
+	end SACS.singletier0;
+
+	
+end IntegratedSACS;

@@ -1,0 +1,64 @@
+stakeholder goals SACStakeholderGoals for IntegratedSCS::SCS 
+use constants SCSConstants
+
+[
+	
+	description "Stakeholder goals for the sensor control system" 
+	
+	goal resource_goals : "System Property Conformance" [
+		description "The system properties shall conform to all limits set my system engineering."
+		rationale "This is a control system, SWaP and other properties must be maintained or safety may be compromised. "
+		stakeholder SCSProject.Acquirer
+		category quality.safety
+	]
+	
+	
+	goal g1 : "Safety" [
+		description "The system shall only change modes when it is safe to do so."
+		rationale "This is a control system, whose failure affects lives. "
+		stakeholder SCSProject.Acquirer
+		category quality.safety
+	]
+	
+	goal g2 : "Security" [
+		description "The system shall change modes only on operator command or in fail mode."
+		rationale "The operator might not anticipate mode changes outside their control. "
+		stakeholder SCSProject.Integrator
+		category quality.security		
+	]
+	
+	goal g3 : "Complete" [
+		description "The system shall allow nominal, failed, and badData modes"
+		rationale "This system is responsible for providing 3 modes of operation"
+		stakeholder SCSProject.Integrator
+		category quality.safety
+	]
+	
+	goal g4 : "Correct" [
+		description "The system shall change modes only if it has the data to do so"
+		rationale "This system cannot violate the state machine"
+		stakeholder SCSProject.Acquirer
+		category quality.ease_of_operation
+	]
+	
+	goal g5 : "Sense" [
+		description "The system shall sense information about the state of the environment"
+		rationale "This system must know about potential obstacles, weather, SA data"
+		stakeholder SCSProject.Acquirer
+		category quality.ease_of_operation		
+		]
+
+	goal g6 : "Maintainability" [
+		description "The system shall be designed to support ease of upgrade"
+		rationale "System sensors can be added or changed over time"
+		stakeholder SCSProject.Acquirer
+		category quality.ease_of_operation
+	]
+	
+	goal g7 : "Standardization" [
+		description "The system shall be designed using a standard modeling language"
+		rationale "Modelers should be able to benefit from evolving tool base"
+		stakeholder SCSProject.Modeler
+		category quality.ease_of_operation
+	]
+]

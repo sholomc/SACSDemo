@@ -12,7 +12,6 @@ use constants SCSConstants
 		category quality.safety
 	]
 	
-	
 	goal g1 : "Safety" [
 		description "The system shall only change modes when it is safe to do so."
 		rationale "This is a control system, whose failure affects lives. "

@@ -1,0 +1,24 @@
+package IntegratedSACS
+public
+with SEI;
+	
+	system SACS -- sensor control system template
+  		properties -- newly added properties
+			SEI::MIPSBudget => 1.2 mips;
+			SEI::BandWidthCapacity => 0.1 MBytesps;
+			SEI::WeightLimit => 1.8 kg;
+			
+  	end SACS;
+
+	system implementation SACS.singletier0
+		subcomponents
+	
+			ControlSystem: system;
+			sensor1: device;
+			sensor2: device;
+			actuator:device;
+		
+
+	end SACS.singletier0;
+	
+end IntegratedSACS;

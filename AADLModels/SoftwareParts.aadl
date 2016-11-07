@@ -4,8 +4,8 @@ public
 	
 	thread sensor2_sense_thread
 		features
-			signalout: out data port DataModel::SensorData;
-			signalin: in data port DataModel::SensorData;
+			signalout: out data port DataModel::Sensor2Data;
+			signalin: in data port DataModel::Sensor2Data;
 		properties
 			Stack_Size => 12 Kbyte;
 			Period => 20 ms;
@@ -14,8 +14,8 @@ public
 
 	thread actuator2_output_thread
 		features
-			controlin: in data port DataModel::actuatecmd;
-			actuate: out data port DataModel::actuatecmd;
+			controlin: in data port DataModel::actuate2cmd;
+			actuate: out data port DataModel::actuate2cmd;
 		properties
 			Stack_Size => 12 Kbyte;
 			Period => 20 ms;
@@ -24,8 +24,8 @@ public
 
 	thread filterApp
 		features
-			sensorraw: in data port DataModel::SensorData;
-			sensorfiltered: out data port DataModel::SensorData;
+			sensorraw: in data port DataModel::Sensor2Data;
+			sensorfiltered: out data port DataModel::Sensor2Data;
 		properties
 			Stack_Size => 25 Kbyte;
 			Data_size => 250 KByte; -- for logging
@@ -35,8 +35,8 @@ public
 
 	thread controlApp
 		features
-			sensorfiltered: in data port DataModel::SensorData;
-			actuatesensor: out data port DataModel::actuatecmd;
+			sensorfiltered: in data port DataModel::Sensor2Data;
+			actuatesensor: out data port DataModel::actuate2cmd;
 		properties
 			Stack_Size => 25 Kbyte;
 			Data_size => 50 KByte; -- for control state
@@ -49,9 +49,9 @@ public
 
 	process implementation IO_Process.impl
 		subcomponents
-			sense: thread sensor_sense_thread; 
+			sense: thread sensor2_sense_thread; 
 			mode_change: thread;
-			actuate: thread actuator_output_thread; 
+			actuate: thread actuator2_output_thread; 
 	end IO_Process.impl;
 	
 	process Command_Process

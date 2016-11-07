@@ -1,18 +1,6 @@
 package IntegratedSACS
 public
 with SEI;
-	with SoftwareParts, PhysicalParts;
-	
-	system ControlSystem
-		
-	end ControlSystem;
-
-	system implementation ControlSystem.singletier0
-		subcomponents
-			Software: system SoftwareParts::DigitalControl.tier1;
-			Hardware: system PhysicalParts::main_board.single;
-	end ControlSystem.singletier0;
-	
 	
   	system SCS -- sensor control system template
   	
@@ -21,7 +9,7 @@ with SEI;
 	system implementation SCS.singletier0
 		subcomponents
 	
-			ControlSystem: system ControlSystem.singletier0;
+			ControlSystem: system;
 			sensor1: device;
 			sensor2: device;
 			actuator:device;

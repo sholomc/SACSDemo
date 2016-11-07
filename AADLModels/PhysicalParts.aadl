@@ -1,20 +1,35 @@
 package PhysicalParts
 public
 	
+with SEI;
+
 	processor powerpc
-		
+		features
+			power: in data port Power;
+		properties
+			SEI::PowerBudget => 0.8 w applies to power;	
 	end powerpc;
 
 	bus CANbus
+		features
+			power: in data port Power;
+		properties
+			SEI::PowerBudget => 0.8 w applies to power;
 
 	end CANbus;
 
 	memory main_memory
-
+		features
+			power: in data port Power;
+		properties
+			SEI::PowerBudget => 0.8 w applies to power;
 	end main_memory;
 	
 	system main_board
-		
+		features
+			power: in data port Power;
+		properties
+			SEI::PowerBudget => 0.8 w applies to power;
 	end main_board;
 	
 	system implementation main_board.single
@@ -22,9 +37,28 @@ public
 			cpu: processor powerpc;
 			ram: memory main_memory;
 			canbus: bus CANbus;
+		connections
+			BusPower: port power -> canbus.power;
+			RAMPower: port power -> ram.power;
+			PCPower:  port power -> cpu.power;
 	end main_board.single;
 
 	abstract Power
+		features
+			powerout: out data port power;
+			powerin: in data port power;
+
 	end Power;
+
+	abstract implementation Power.V30
+
+		Properties
+			SEI::PowerCapacity => 10.0 W;
+			SEI::PowerSupply  => 10.0 W;
+			SEI::PowerBudget => 5.0 W;
+
+	end Power.V30;
+
+
 	
 end PhysicalParts;

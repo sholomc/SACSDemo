@@ -7,7 +7,7 @@ public
 			signalout: out data port DataModel::SensorData;
 			signalin: in data port DataModel::SensorData;
 		properties
-			Stack_Size => 10 Kbyte;
+			Stack_Size => 12 Kbyte;
 			Period => 20 ms;
 			Compute_Execution_Time => 10 ms .. 12 ms;
 	end sensor_sense_thread;
@@ -17,7 +17,7 @@ public
 			controlin: in data port DataModel::actuatecmd;
 			actuate: out data port DataModel::actuatecmd;
 		properties
-			Stack_Size => 10 Kbyte;
+			Stack_Size => 12 Kbyte;
 			Period => 20 ms;
 			Compute_Execution_Time => 8 ms .. 10 ms;
 	end actuator_output_thread;

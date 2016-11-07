@@ -2,7 +2,7 @@ package SoftwareParts
 public
 	with DataModel;
 	
-	thread sensor_sense_thread
+	thread sensor2_sense_thread
 		features
 			signalout: out data port DataModel::SensorData;
 			signalin: in data port DataModel::SensorData;
@@ -10,9 +10,9 @@ public
 			Stack_Size => 12 Kbyte;
 			Period => 20 ms;
 			Compute_Execution_Time => 10 ms .. 12 ms;
-	end sensor_sense_thread;
+	end sensor2_sense_thread;
 
-	thread actuator_output_thread
+	thread actuator2_output_thread
 		features
 			controlin: in data port DataModel::actuatecmd;
 			actuate: out data port DataModel::actuatecmd;
@@ -20,7 +20,7 @@ public
 			Stack_Size => 12 Kbyte;
 			Period => 20 ms;
 			Compute_Execution_Time => 8 ms .. 10 ms;
-	end actuator_output_thread;
+	end actuator2_output_thread;
 
 	thread filterApp
 		features

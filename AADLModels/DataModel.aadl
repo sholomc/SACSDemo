@@ -1,12 +1,12 @@
 package DataModel
 public
 	
-	data SensorData
+	data Sensor2Data
 		properties
 			Data_Size => 2 KByte;
 	end SensorData;
 
-	data actuatecmd
+	data actuate2cmd
 		properties
 			Data_Size => 100 Bytes;
 	end actuatecmd;

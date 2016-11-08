@@ -45,16 +45,22 @@ public
 	end controlApp;
 	
 	process IO_Process
+		features
+			sensorfiltered: in data port DataModel::SensorData;
+			actuatesensor: out data port DataModel::actuatecmd;
 	end IO_Process;
 
 	process implementation IO_Process.impl
 		subcomponents
-			sense: thread sensor_sense_thread; 
+			sense: thread sensor2_sense_thread; 
 			mode_change: thread;
-			actuate: thread actuator_output_thread; 
+			actuate: thread actuator2_output_thread; 
 	end IO_Process.impl;
 	
 	process Command_Process
+		features
+			signalout: out data port DataModel::SensorData;
+			signalin: in data port DataModel::SensorData;
 	end Command_Process;
 
 	process implementation Command_Process.impl

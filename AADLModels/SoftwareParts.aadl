@@ -45,6 +45,9 @@ public
 	end controlApp;
 	
 	process IO_Process
+		features
+			sensorfiltered: in data port DataModel::Sensor2Data;
+			actuatesensor: out data port DataModel::actuate2cmd;
 	end IO_Process;
 
 	process implementation IO_Process.impl
@@ -55,6 +58,9 @@ public
 	end IO_Process.impl;
 	
 	process Command_Process
+		features
+			sensorraw: in data port DataModel::Sensor2Data;
+			sensorfiltered: out data port DataModel::Sensor2Data;
 	end Command_Process;
 
 	process implementation Command_Process.impl
